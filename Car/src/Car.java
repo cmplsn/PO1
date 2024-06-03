@@ -3,10 +3,12 @@ import javax.swing.*;
 public class Car {
     double speed=0;
     double fuel=0;
-    double lPerKmH=0.01;
+    FuelType fuelType;
 
-    void refuel(double amount){
-        fuel +=amount;
+    void refuel(FuelTank tank){
+        if (tank.type.equals(this.fuelType.type)){
+            fuel+=tank.amount;
+        }
     }
     void brake(double amount){
         if(amount >speed)
@@ -14,13 +16,13 @@ public class Car {
         else speed-=amount;
     }
     void accelerate(double amount){
-        double fuelConsumed=amount*lPerKmH;
+        double fuelConsumed=amount*fuelType.litresPerKmH;
         if (fuelConsumed<fuel) {
             speed += amount;
             fuel -= fuelConsumed;
         }
         else{
-            double increaseSpeed=fuel/lPerKmH;
+            double increaseSpeed=fuel/fuelType.litresPerKmH;
             speed+=increaseSpeed;
             fuel=0;
         }

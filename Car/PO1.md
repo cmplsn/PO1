@@ -33,4 +33,9 @@ metodo main che è un possibile entry-point quindi al momento dell'esecuzione de
 vogliamo che inizi l'esecuzione (specificando "javac <Nome_File.java>" e poi "java <nome_classe_entrypoint>")
 
 ### Interazione tra Oggetti
-Una classe da noi definita può anche essere un campo di un'altra classe -> **Ogni classe definisce un tipo a sé stante**
+Una classe da noi definita può anche essere un campo di un'altra classe -> **Ogni classe definisce un tipo a sé stante**.
+In questa maniera un oggetto può contenere (un pointer ad) un altro oggetto dentro i suoi campi, o può ricevere un altro
+oggetto come parametro di un suo metodo.
+
+!!! QUANDO NON ASSEGNAMO UN VALORE INIZIALE ESPLICITO AD UN CAMPO, ESSO É AUTOMATICAMENTE INIZIALIZZATO A 0 (o Null)!!!
+
